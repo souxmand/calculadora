@@ -1,43 +1,58 @@
-// Selecionar os elementos da calculadora
-const num1Input = document.getElementById("num1");
-const num2Input = document.getElementById("num2");
-const addButton = document.getElementById("add");
-const subtractButton = document.getElementById("subtract");
-const multiplyButton = document.getElementById("multiply");
-const divideButton = document.getElementById("divide");
-const outputSpan = document.getElementById("output");
+// resultado
+let result = document.getElementById("result");
 
-// Adicionar event listeners aos botões
-addButton.addEventListener("click", () => calculate("add"));
-subtractButton.addEventListener("click", () => calculate("subtract"));
-multiplyButton.addEventListener("click", () => calculate("multiply"));
-divideButton.addEventListener("click", () => calculate("divide"));
+// input botões de numero
+const numericButtons = document.querySelectorAll(".numeric-button");
+for (const button of numericButtons) {
+    button.addEventListener("click", () => input(button.textContent));
+}
 
-// Função para realizar cálculos
-function calculate(operation) {
-    const num1 = parseFloat(num1Input.value);
-    const num2 = parseFloat(num2Input.value);
+// clicar no número
+const operatorButtons = document.querySelectorAll(".operator-button");
+for (const button of operatorButtons) {
+    button.addEventListener("click", () => inputOperator(button.textContent));
+}
 
-    if (isNaN(num1) || isNaN(num2)) {
-        outputSpan.textContent = "Algo deu errado, digite os números novamente";
+// Input numeros
+function input(num) {
+    let number = result.value;
+    result.value = number + num;
+}
+
+// Input operadores
+function inputOperator(operator) {
+    let expression = result.value;
+
+    // "Verifica se com um operador; se sim, substitui pelo novo operador."
+    if (isOperator(expression.charAt(expression.length - 1))) {
+        result.value = expression.substring(0, expression.length - 1) + operator;
     } else {
-        switch (operation) {
-            case "add":
-                outputSpan.textContent = num1 + num2;
-                break;
-            case "subtract":
-                outputSpan.textContent = num1 - num2;
-                break;
-            case "multiply":
-                outputSpan.textContent = num1 * num2;
-                break;
-            case "divide":
-                if (num2 === 0) {
-                    outputSpan.textContent = "Divisão por zero resulta no próprio número";
-                } else {
-                    outputSpan.textContent = num1 / num2;
-                }
-                break;
-        }
+        result.value = expression + operator;
     }
+}
+
+// Checar operador (+, -, *, /)
+function isOperator(char) {
+    return char === '+' || char === '-' || char === '*' || char === '/';
+}
+
+// lógica
+function calc() {
+    let expression = result.value;
+    try {
+        result.value = eval(expression);
+    } catch (error) {
+        alert("⚠️Algo deu errado, tente novamente");
+    }
+}
+
+// resetar
+function reset() {
+    result.value = "";
+}
+
+// excluir 
+function del() {
+    let expression = result.value;
+    result.value = expression.substring(0, expression.length - 1);
 }
