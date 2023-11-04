@@ -6,13 +6,17 @@ body {
     height: 100vh;
     margin: 0;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color:#b7f7e1;
+    background-color: #b7f7e1;
+    background-image: url(bgcalc.png);
+    background-size: cover;
 }
 
 .container {
-    width: 300px;
+    width: 240px;
+    height: 245px;
     padding: 20px;
     background-color: #d8bfd8;
+
     border-radius: 5px;
     border: 2px solid #fa0577;
     box-shadow: 0 0 5px rgba(250, 5, 19, 0.15);
@@ -24,7 +28,7 @@ body {
     width: 50%;
     padding: 5px;
     margin: 5px;
-    background-color:#ffb6c1;
+    background-color: #ffb6c1;
     border-radius: 5px;
     border: 2px solid #fa0577;
     color: #fa0577;
@@ -36,8 +40,8 @@ input[type="button"] {
     height: 40px;
     font-size: 15px;
     margin: 5px;
-    color: #fa0577; 
-    background-color:#ffb6c1;
+    color: #fa0577;
+    background-color: #ffb6c1;
     border-radius: 5px;
     border: 2px solid #fa0577;
 }
@@ -46,11 +50,15 @@ input[type="button"] {
     font-weight: bold;
     font-size: 36px;
     margin-top: 20px;
-    margin-left: 306px;
-    width: 660px;
+    margin-left: 247px;
+    width: 541px;
 }
 
-#mais, #menos, #vezes, #dividir, #igual {
+#mais,
+#menos,
+#vezes,
+#dividir,
+#igual {
     width: 60px;
 }
 
