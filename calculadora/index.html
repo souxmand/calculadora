@@ -1,66 +1,53 @@
 <!DOCTYPE html>
+<html>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
-        <title>Calculadora</title>
-    </head>
-    <body>
-    </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculadora</title>
+</head>
 
-    <!-- Input pra por os resultados  -->
+<body>
+    <!-- Input para exibir os resultados -->
     <div class="calc-top-result row">
-        <input type="text" class="resultado" id="result" placeholder="0" disabled></input>
+        <input type="text" class="resultado" id="result" placeholder="0" disabled>
     </div>
-</div>
 
-    <!-- botões -->
+    <!-- Botões -->
     <div class="container">
-        <div class="row">
-            <input class="col" type="button" value="7" onclick="input('7')">
-            <input class="col" type="button" value="8" onclick="input('8')">
-            <input class="col" type="button" value="9" onclick="input('9')">
-            <input class="col" type="button" value="+" id="mais" onclick="input('+')">
-
+        <div class="linha1">
+            <input class="num" type="button" value="7" onclick="input('7')">
+            <input class="num" type="button" value="8" onclick="input('8')">
+            <input class="num" type="button" value="9" onclick="input('9')">
+            <input class="outro" type="button" value="+" id="mais" onclick="input('+')">
         </div>
-        <div class="row">
-            <input class="col" type="button" value="4" onclick="input('4')">
-            <input class="col" type="button" value="5" onclick="input('5')">
-            <input class="col" type="button" value="6" onclick="input('6')">
-            <input class="col" type="button" value="-" id="menos" onclick="input('-')">
-
+        <div class="linha2">
+            <input class="num" type="button" value="4" onclick="input('4')">
+            <input class="num" type="button" value="5" onclick="input('5')">
+            <input class="num" type="button" value="6" onclick="input('6')">
+            <input class="outro" type="button" value="-" id="menos" onclick="input('-')">
         </div>
-        <div class="row">
-            <input class="col" type="button" value="1" onclick="input('1')">
-            <input class="col" type="button" value="2" onclick="input('2')">
-            <input class="col" type="button" value="3" onclick="input('3')">
-            <input class="col" type="button" value="x" id="vezes" onclick="input('*')">
-            
+        <div class="linha3">
+            <input class="num" type="button" value="1" onclick="input('1')">
+            <input class="num" type="button" value="2" onclick="input('2')">
+            <input class="num" type="button" value="3" onclick="input('3')">
+            <input class="outro" type="button" value="x" id="vezes" onclick="input('*')">
         </div>
-        <div class="row">
-            <input class="col" type="button" value="." 
-            id="ponto" onclick="input('.')">
-            <input class="col" type="button" value="0" 
-            onclick="input('0')">
-            <input class="col" type="button" value="DEL" id="del" onclick="del()">
-            <input class="col" type="button" value="/" 
-            id="dividir" onclick="input('/')">
-           
+        <div class="linha4">
+            <input class="num" type="button" value="." id="ponto" onclick="input('.')">
+            <input class="num" type="button" value="0" onclick="input('0')">
+            <input class="num" type="button" value="DEL" id="del" onclick="del()">
+            <input class="outro" type="button" value="÷" id="dividir" onclick="input('/')">
         </div>
-        <div class="row">
-            <input class="col" type="button" value="RESET" id="reset" onclick="reset()">
-            <input class="col" type="button" value="♡" id="heart">
-            <input class="col" type="button" value="=" id="igual" onclick="calc()">
+        <div class="linha5">
+            <input class="outro" type="button" value="LIMPAR" id="reset" onclick="reset()">
+            <input class="col deco" type="button" value="♡" id="heart" onclick="showHeartAlert()">
+            <input class="outro" type="button" value="=" id="igual" onclick="calc()">
         </div>
     </div>
 
-</div>
+    <script src="calculadora.js"></script>
+</body>
 
-</div>
-</div>
-</div>
-
-        <script src="calculadora.js"></script>
-    </body>
-    </html>
+</html>
