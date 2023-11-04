@@ -57,3 +57,8 @@ function reset() {
 function del() {
     result.value = result.value.slice(0, -1);
 }
+
+// Não quis deixar ele sem função nenhuma 
+function showHeartAlert() {
+    alert(" ♡ isso é só um enfeite, mas obrigada por usar minha calculadora ♡"); 
+}
